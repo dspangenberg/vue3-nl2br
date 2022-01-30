@@ -17,7 +17,7 @@ export default {
           .split("\n")
           .reduce((accumulator, string) => {
             if (!Array.isArray(accumulator)) {
-              return [accumulator, h("br"), string];
+              return [accumulator, string, h("br")];
             }
             return accumulator.concat([string, h("br")]);
           }, [])
