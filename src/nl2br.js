@@ -1,7 +1,6 @@
 import { h } from "vue";
 
 export default {
-  functional: true,
   props: {
     tag: { type: String, required: false, default: "p" },
     text: { type: String, required: true },
@@ -20,7 +19,7 @@ export default {
             if (!Array.isArray(accumulator)) {
               return [accumulator, h("br"), string];
             }
-            return accumulator.concat([h("br"), string]);
+            return accumulator.concat([string, h("br")]);
           }, [])
       );
   }
